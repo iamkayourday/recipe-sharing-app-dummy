@@ -50,27 +50,29 @@ const RecipeList = () => {
 
       {/* Conditionally render the Add Recipe Form */}
       {showAddForm && <AddRecipeForm />}
+      <div className='display'>
       {filteredRecipes.length > 0 ? (
         filteredRecipes.map((recipe) => (
           <div className='list' key={recipe.id}>
-            <h2 style={{ color: "slategray" }}>{recipe.title}</h2>
+            
+              <h2 className='title' style={{ color: "slategray" }}>{recipe.title}</h2>
 
-            {/* Display the recipe's image */}
-            <div className='display'>
-              {recipe.image ? (
-                <img src={recipe.image} alt={recipe.title} style={{ maxWidth: '200px'  }} />
-              ) : (
-                <img  src="https://via.placeholder.com/150" alt="recipe img" />
-              )}
-              <p style={{ height: 'auto', width:"500px" }}>Description: {recipe.description}</p>
-              <Link to={`/recipe/${recipe.id}`}>View Details for {recipe.title}</Link>
+              {/* Display the recipe's image */}
+              
+                {recipe.image ? (
+                  <img src={recipe.image} alt={recipe.title} style={{ width: '150px',height:"150px"  }} />
+                ) : (
+                  <img  src="https://via.placeholder.com/150" alt="recipe img" />
+                )}
+                <p style={{ height: 'auto', width:"500px" }}>Description: {recipe.description}</p>
+                <Link to={`/recipe/${recipe.id}`}>View Details for {recipe.title}</Link>
             </div>
-          </div>
+          
         ))
       ) : (
-        <p>No recipes found.</p>
+        <p className='no'>No recipes found.</p>
       )}
-
+</div>
       <FavoritesList />
       <RecommendationsList />
     </div>

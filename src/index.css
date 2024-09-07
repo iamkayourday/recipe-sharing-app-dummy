@@ -109,45 +109,43 @@ textarea {
   .search-input, .title, textarea {
     width: 55%;
   }
-input.search-input {
-      margin-left: 150px;
+  input.search-input {
+        margin-left: 150px;
+    }
+    .Add, .Del, .Edit {
+      max-width: 250px; /* Limit button width on smaller screens */
+    }
+    input {
+      margin: auto; 
   }
-  .Add, .Del, .Edit {
-    max-width: 250px; /* Limit button width on smaller screens */
+    textarea{
+      margin: auto;  
+      margin-bottom: 30px; 
+
   }
-  input {
-    margin: auto; 
-}
-  textarea{
-    margin: auto;  
-    margin-bottom: 30px; 
+  .list {
+    width: 100%;
+    padding-left: 20px;
 
-}
-.list {
-  width: 100%;
-  padding-left: 20px;
+  }
+  .search-input {
+    margin-left: 120px;
 
-}
-.search-input {
-  margin-left: 120px;
+  }
+  .img {
+    margin-left: 170px;
+  }
+  div.display {
+    margin-left: 150px;
+    
+  }
 
-}
-.img {
-  margin-left: 170px;
-}
-div.display {
-  margin-left: 150px;
-  /* padding-left: 30px;
-  margin: 120px; */
-  /* display: flex; */
-  /* justify-content: center; */
-}
-.fav {
-  padding-left: 160px;
-}
-.rec {
-  padding-left: 160px;
-}
+  .fav {
+    padding-left: 160px;
+  }
+  .rec {
+    padding-left: 160px;
+  }
 }
 
 @media (prefers-color-scheme: light) {
