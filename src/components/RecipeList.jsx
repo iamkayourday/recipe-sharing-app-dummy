@@ -39,7 +39,7 @@ const RecipeList = () => {
           borderRadius: '5px',
           cursor: 'pointer',
         }}>
-          {showAddForm ? 'Hide Add Recipe Form' : 'Show Add Recipe Form'}
+          {showAddForm ? 'Close Form' : 'Add new Recipe'}
         </button>
       </div>
       <h1 style={{
