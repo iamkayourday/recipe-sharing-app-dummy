@@ -16,30 +16,34 @@ const AddRecipeForm = () => {
     setDescription('');
     setInstruction('');
     setTimeout(() => {
-      toast.success('New Recipe added Successfully!!')
+      toast.success(`New Recipe added Successfully!!`)
     }, 100)
+    if (!title || !description || !instruction) {
+      toast.error("All fields (Title, Description, and Instruction) are required.");
+      return; // Prevent form submission
+    }
   };
-// // condition for when title and details is empty
   return (
-    
     <>
-      {/* <h2>Add Recipe</h2> */}
       <form onSubmit={handleSubmit}>
         <input className='title'
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter Recipe Title..."
+          required
         />
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter Recipe Description..."
+          required
         />
         <textarea
           value={instruction}
           onChange={(e) => setInstruction(e.target.value)}
           placeholder="Enter Recipe instruction..."
+          required
         />
         <input type="file" name="" id="image" accept='image'/>
         <button className='Add' type="submit">Add Recipe</button>

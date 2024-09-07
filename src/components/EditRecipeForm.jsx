@@ -15,7 +15,7 @@ const EditRecipeForm = ({ recipe }) => {
     updateRecipe({ ...recipe, title, description,instruction });
     navigate('/')
     setTimeout(() => {
-      toast.success('Recipe Updated succesfully')
+      toast.success(`Recipe ${recipe.title} Updated succesfully `)
       // alert(`Recipe Edited and Updated sucessfullly`)
     }, 100)
    
