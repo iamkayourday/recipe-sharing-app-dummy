@@ -10,7 +10,7 @@ import RecommendationsList from './components/RecommendationsList';
 const App = () => {
   return (
     <Router>
-      <div style={{width:"auto"}}>
+      <div >
         <h1 style={{
           textAlign:'center',
           color:'#646cff'

@@ -15,8 +15,7 @@
 body {
   display: flex;
   justify-content: center;
-  margin: 0;
-  
+  margin: 0; 
 }
 h1 {
   font-size: 1.5em;
@@ -60,7 +59,6 @@ textarea {
   background-color:  #8bc34a;
   border-style: none;
   border-radius: 4px;
-  /* margin-left: 250px; */
 }
 .Add:hover {
   background-color:  #6bc800;
@@ -94,11 +92,44 @@ textarea {
   background-color:  rgb(90, 182, 213);
 }
 
-@media (max-width:430px) {
+/* @media (min-width: 768px) {
+  body {
+    flex-direction: row; 
+    padding: 50px;
+  }
+  .search-input, .title, textarea {
+    max-width: 500px;
+  }
+} */
+
+@media (max-width: 480px) {
   h1 {
-    color: red;
-  };
+    font-size: 1.2em;
+  }
+  .search-input, .title, textarea {
+    width: 50%;
+  }
+  .Add, .Del, .Edit {
+    max-width: 250px; /* Limit button width on smaller screens */
+  }
+  input {
+    margin: auto; 
 }
+  textarea{
+    margin: auto;  
+    margin-bottom: 30px; 
+
+}
+.list {
+  width: 100%;
+  padding-left: 20px;
+
+}
+img {
+  align-items: center;
+}
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

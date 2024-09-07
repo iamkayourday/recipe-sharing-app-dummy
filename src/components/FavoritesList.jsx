@@ -41,7 +41,7 @@ const FavoritesList = () => {
   );
 
   return (
-    <div>
+    <div style={{paddingLeft:'20px'}}>
       <h2>My Favorites</h2>
       {favorites.length > 0 ? (
         favorites.map((recipe) => (
