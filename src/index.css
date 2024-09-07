@@ -33,7 +33,7 @@ a:hover {
   height: 30px;
   width: 300px;
   margin-bottom: 60px;
-  margin-left: 130px;
+  margin-left: 150px;
   border-radius: 10px;
   border-style: none;
 }
@@ -125,8 +125,9 @@ textarea {
   padding-left: 20px;
 
 }
-img {
-  align-items: center;
+.search-input {
+  margin-left: 120px;
+
 }
 }
 
