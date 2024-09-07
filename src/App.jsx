@@ -14,7 +14,7 @@ const App = () => {
           textAlign:'center',
           color:'#646cff'
         }}>Recipe Sharing Application</h1>
-        <p>Welcome to your Recipe App, find and learn how to cook your meal</p>
+        {/* <p>Welcome to your Recipe App, find and learn how to cook your meal</p> */}
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />

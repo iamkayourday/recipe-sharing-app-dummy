@@ -58,6 +58,8 @@ const EditRecipeForm = ({ recipe }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        id='title'
+        name='title'
         className='title'
         type="text"
         value={title}
@@ -65,11 +67,15 @@ const EditRecipeForm = ({ recipe }) => {
         placeholder="Edit Recipe Title"
       />
       <textarea
+        id='description'
+        name='description'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Edit Recipe Description"
       />
       <textarea
+        id='instruction'
+        name='instruction'
         value={instruction}
         onChange={(e) => setInstruction(e.target.value)}
         placeholder="Edit Recipe Instruction..."
@@ -89,7 +95,6 @@ const EditRecipeForm = ({ recipe }) => {
       )}
 
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-
       <button className='Edit' type="submit">Update Recipe</button>
     </form>
   );

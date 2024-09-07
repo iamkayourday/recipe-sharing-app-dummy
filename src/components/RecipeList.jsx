@@ -61,7 +61,7 @@ const RecipeList = () => {
             ) : (
               <img src="https://via.placeholder.com/150" alt="recipe img" />
             )}
-            <p style={{ height: 'auto' }}>Description: {recipe.description}</p>
+            <p style={{ height: 'auto',width:"500px" }}>Description: {recipe.description}</p>
             <Link to={`/recipe/${recipe.id}`}>View Details for {recipe.title}</Link>
           </div>
         ))
