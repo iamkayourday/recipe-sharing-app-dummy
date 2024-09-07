@@ -27,7 +27,7 @@ const RecipeList = () => {
 
 
   return (
-    <div>
+    <div style={{ marginLeft:"150px"}}>
       <SearchBar />
       {/* Button to toggle the Add Recipe Form */}
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
@@ -52,7 +52,7 @@ const RecipeList = () => {
       {showAddForm && <AddRecipeForm />}
       {filteredRecipes.length > 0 ? (
         filteredRecipes.map((recipe) => (
-          <div className='list' key={recipe.id}>
+          <div  className='list' key={recipe.id}>
             <h2 style={{ color: "slategray" }}>{recipe.title}</h2>
 
             {/* Display the recipe's image */}
