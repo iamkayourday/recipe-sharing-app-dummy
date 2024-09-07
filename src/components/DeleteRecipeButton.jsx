@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecipeStore } from './recipeStore';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 
 const DeleteRecipeButton = ({ recipeId }) => {
@@ -11,7 +12,7 @@ const DeleteRecipeButton = ({ recipeId }) => {
     deleteRecipe(recipeId);
     navigate('/')
     setTimeout(() => {
-      alert('Recipe deleted successfully');
+      toast.success('Recipe deleted successfully!!');
     }, 100);
   };
 setTimeout(() => {

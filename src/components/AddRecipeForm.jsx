@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
+import { toast } from 'react-toastify';
 
 const AddRecipeForm = () => {
   const addRecipe = useRecipeStore(state => state.addRecipe);
@@ -15,7 +16,7 @@ const AddRecipeForm = () => {
     setDescription('');
     setInstruction('');
     setTimeout(() => {
-       alert(`New Recipe Added sucessfullly`)
+      toast.success('New Recipe added Successfully!!')
     }, 100)
   };
 // // condition for when title and details is empty
@@ -40,6 +41,7 @@ const AddRecipeForm = () => {
           onChange={(e) => setInstruction(e.target.value)}
           placeholder="Enter Recipe instruction..."
         />
+        <input type="file" name="" id="image" accept='image'/>
         <button className='Add' type="submit">Add Recipe</button>
       </form>
     </>

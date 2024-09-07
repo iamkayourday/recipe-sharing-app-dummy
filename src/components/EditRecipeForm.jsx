@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const EditRecipeForm = ({ recipe }) => {
   const navigate = useNavigate();
@@ -14,7 +15,8 @@ const EditRecipeForm = ({ recipe }) => {
     updateRecipe({ ...recipe, title, description,instruction });
     navigate('/')
     setTimeout(() => {
-      alert(`Recipe Edited and Updated sucessfullly`)
+      toast.success('Recipe Updated succesfully')
+      // alert(`Recipe Edited and Updated sucessfullly`)
     }, 100)
    
   };
@@ -38,6 +40,7 @@ const EditRecipeForm = ({ recipe }) => {
         onChange={(e) => setInstruction(e.target.value)}
         placeholder="Edit Recipe instruction..."
       />
+      <input type="file" name="" id="image" accept=''/>
       <button className='Edit' type="submit">Update Recipe</button>
     </form>
   );
