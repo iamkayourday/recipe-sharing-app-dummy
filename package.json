@@ -1,5 +1,5 @@
 {
-  "homepage": "https://iamkayourday.github.io/recipe-sharing-app-dummy/" ,
+  "homepage": "https://iamkayourday.github.io/recipe-sharing-app-dummy/",
   "name": "recipe-sharing-app-dummy",
   "private": true,
   "version": "0.0.0",
@@ -16,6 +16,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
+    "react-toastify": "^10.0.5",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
