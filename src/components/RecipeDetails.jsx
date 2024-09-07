@@ -16,12 +16,9 @@ const RecipeDetails = () => {
 
   return (
     <div style={{width:'100%', padding:"10px"}}>
-      <h2 style={{
-        color:'slategray'
-      }}>{recipe.title}</h2>
+      <h2 style={{color:'slategray'}}>{recipe.title}</h2>
       <p style={{
         height:'auto',
-        // width:'630px',
         backgroundColor:'grey'
       }}>{recipe.instruction}</p>
       <EditRecipeForm recipe={recipe} />
