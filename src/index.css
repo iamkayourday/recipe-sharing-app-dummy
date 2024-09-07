@@ -107,7 +107,10 @@ textarea {
     font-size: 1.2em;
   }
   .search-input, .title, textarea {
-    width: 50%;
+    width: 55%;
+  }
+input.search-input {
+      margin-left: 150px;
   }
   .Add, .Del, .Edit {
     max-width: 250px; /* Limit button width on smaller screens */
@@ -128,6 +131,22 @@ textarea {
 .search-input {
   margin-left: 120px;
 
+}
+.img {
+  margin-left: 170px;
+}
+div.display {
+  margin-left: 150px;
+  /* padding-left: 30px;
+  margin: 120px; */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.fav {
+  padding-left: 160px;
+}
+.rec {
+  padding-left: 160px;
 }
 }
 

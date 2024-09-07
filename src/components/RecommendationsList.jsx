@@ -10,7 +10,7 @@ const RecommendationsList = () => {
   }, [generateRecommendations]);
 
   return (
-    <div style={{paddingLeft:'20px'}}>
+    <div className='rec'>
       <h2>Recommended Recipes</h2>
       {recommendations.length > 0 ? (
         recommendations.map((recipe) => (

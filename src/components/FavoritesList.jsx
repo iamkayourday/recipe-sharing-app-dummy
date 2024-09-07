@@ -9,7 +9,7 @@ const FavoritesList = () => {
   );
 
   return (
-    <div style={{paddingLeft:'20px'}}>
+    <div className='fav'>
       <h2>My Favorites</h2>
       {favorites.length > 0 ? (
         favorites.map((recipe) => (

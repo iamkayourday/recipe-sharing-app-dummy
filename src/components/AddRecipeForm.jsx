@@ -75,7 +75,7 @@ const AddRecipeForm = () => {
         />
 
         {/* Input for uploading an image */}
-        <input style={{backgroundColor:'grey', cursor:'pointer', borderRadius:'4px', marginBottom:'3px'}}
+        <input className='img' style={{ cursor:'pointer', borderRadius:'4px', marginBottom:'3px'}}
           type="file"
           id="image"
           accept="image/*"

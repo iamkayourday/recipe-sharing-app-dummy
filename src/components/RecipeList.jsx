@@ -27,7 +27,7 @@ const RecipeList = () => {
 
 
   return (
-    <div style={{ marginLeft:"150px"}}>
+    <div >
       <SearchBar />
       {/* Button to toggle the Add Recipe Form */}
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
@@ -52,17 +52,19 @@ const RecipeList = () => {
       {showAddForm && <AddRecipeForm />}
       {filteredRecipes.length > 0 ? (
         filteredRecipes.map((recipe) => (
-          <div  className='list' key={recipe.id}>
+          <div className='list' key={recipe.id}>
             <h2 style={{ color: "slategray" }}>{recipe.title}</h2>
 
             {/* Display the recipe's image */}
-            {recipe.image ? (
-              <img src={recipe.image} alt={recipe.title} style={{ maxWidth: '150px', maxHeight:"150px" }} />
-            ) : (
-              <img src="https://via.placeholder.com/150" alt="recipe img" />
-            )}
-            <p style={{ height: 'auto',width:"500px" }}>Description: {recipe.description}</p>
-            <Link to={`/recipe/${recipe.id}`}>View Details for {recipe.title}</Link>
+            <div className='display'>
+              {recipe.image ? (
+                <img src={recipe.image} alt={recipe.title} style={{ maxWidth: '200px'  }} />
+              ) : (
+                <img  src="https://via.placeholder.com/150" alt="recipe img" />
+              )}
+              <p style={{ height: 'auto', width:"500px" }}>Description: {recipe.description}</p>
+              <Link to={`/recipe/${recipe.id}`}>View Details for {recipe.title}</Link>
+            </div>
           </div>
         ))
       ) : (
