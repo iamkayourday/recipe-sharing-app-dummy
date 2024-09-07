@@ -4,13 +4,13 @@ const generateUniqueId = () => crypto.randomUUID();
 
 const useRecipeStore = create((set) => ({
   recipes: JSON.parse(localStorage.getItem('recipes')) || [
-    {
-      id: generateUniqueId(),
-      title: "Spaghetti Bolognese",
-      description: "A classic Italian pasta dish with a rich, meaty sauce.",
-      instruction: "Cook spaghetti according to package instructions. Sauté minced garlic and onions, then add ground beef. Cook until browned. Add tomato sauce, Italian herbs, salt, and pepper. Simmer for 20 minutes. Serve sauce over cooked spaghetti, and garnish with grated Parmesan cheese.",
-      // image: "public/img/sphaghetti.jpg"
-    },
+    // {
+    //   id: generateUniqueId(),
+    //   title: "Spaghetti Bolognese",
+    //   description: "A classic Italian pasta dish with a rich, meaty sauce.",
+    //   instruction: "Cook spaghetti according to package instructions. Sauté minced garlic and onions, then add ground beef. Cook until browned. Add tomato sauce, Italian herbs, salt, and pepper. Simmer for 20 minutes. Serve sauce over cooked spaghetti, and garnish with grated Parmesan cheese.",
+    //   // image: "public/img/sphaghetti.jpg"
+    // },
     // {
     //   id: generateUniqueId(),
     //   title: "Chicken Caesar Salad",

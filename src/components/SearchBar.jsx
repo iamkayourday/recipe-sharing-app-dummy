@@ -9,6 +9,9 @@ const SearchBar = () => {
       type="text"
       placeholder="Search recipes..."
       onChange={(e) => setSearchTerm(e.target.value)}
+      style={{
+        display:"flex"
+      }}
     />
   );
 };
