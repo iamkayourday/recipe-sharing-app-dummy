@@ -57,7 +57,7 @@ const RecipeList = () => {
 
             {/* Display the recipe's image */}
             {recipe.image ? (
-              <img src={recipe.image} alt={recipe.title} style={{ maxWidth: '200px' }} />
+              <img src={recipe.image} alt={recipe.title} style={{ maxWidth: '200px', height:"150px" }} />
             ) : (
               <img src="https://via.placeholder.com/150" alt="recipe img" />
             )}
