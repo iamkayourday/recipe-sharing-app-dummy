@@ -10,19 +10,19 @@ import RecommendationsList from './components/RecommendationsList';
 const App = () => {
   return (
     <Router>
-      <div>
+      <div style={{width:"auto"}}>
         <h1 style={{
           textAlign:'center',
           color:'#646cff'
         }}>Recipe Sharing Application</h1>
-        <SearchBar />
-        <AddRecipeForm />
+        {/* <SearchBar /> */}
+        {/* <AddRecipeForm /> */}
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
-        <FavoritesList />
-        <RecommendationsList />
+        {/* <FavoritesList />
+        <RecommendationsList /> */}
       </div>
     </Router>
   );
