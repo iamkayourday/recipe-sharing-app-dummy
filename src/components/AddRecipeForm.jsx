@@ -3,50 +3,88 @@ import { useRecipeStore } from './recipeStore';
 import { toast } from 'react-toastify';
 
 const AddRecipeForm = () => {
-  const addRecipe = useRecipeStore(state => state.addRecipe);
+  const addRecipe = useRecipeStore((state) => state.addRecipe);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [instruction, setInstruction] = useState('')
+  const [instruction, setInstruction] = useState('');
+  const [image, setImage] = useState(null); // State to store the image
+
+  // Handle image upload and convert to Base64
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setImage(reader.result); // Save the Base64 image data
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
-    addRecipe({ id: generateUniqueId(), instruction, title, description });
+
+    // Check if any required fields are empty
+    if (!title || !description || !instruction) {
+      toast.error('Please fill out all fields.');
+      return;
+    }
+
+    const generateUniqueId = () => crypto.randomUUID();
+    addRecipe({ 
+      id: generateUniqueId(), 
+      title, 
+      description, 
+      instruction, 
+      image // Include the image in the recipe data
+    });
+
+    // Clear form fields
     setTitle('');
     setDescription('');
     setInstruction('');
+    setImage(null);
+
     setTimeout(() => {
-      toast.success(`New Recipe added Successfully!!`)
-    }, 100)
-    if (!title || !description || !instruction) {
-      toast.error("All fields (Title, Description, and Instruction) are required.");
-      return; // Prevent form submission
-    }
+      toast.success('New Recipe added Successfully!!');
+    }, 100);
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input className='title'
+        <input
+          className="title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter Recipe Title..."
-          required
         />
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter Recipe Description..."
-          required
         />
         <textarea
           value={instruction}
           onChange={(e) => setInstruction(e.target.value)}
-          placeholder="Enter Recipe instruction..."
-          required
+          placeholder="Enter Recipe Instructions..."
         />
-        <input type="file" name="" id="image" accept='image'/>
-        <button className='Add' type="submit">Add Recipe</button>
+
+        {/* Input for uploading an image */}
+        <input style={{backgroundColor:'grey', cursor:'pointer', borderRadius:'4px', marginBottom:'3px'}}
+          type="file"
+          id="image"
+          accept="image/*"
+          onChange={handleImageChange} // Handle file upload
+        />
+
+        <button className="Add" type="submit">
+          Add Recipe
+        </button>
       </form>
     </>
   );
